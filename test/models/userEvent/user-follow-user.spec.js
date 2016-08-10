@@ -1,7 +1,7 @@
 let utils = require('../../utils.js');
 let should = require(`should`);
 describe("User Follow User Event",()=>{
-	it("Should create a new register event",(done)=>{
+	it("Should create a new follow event",(done)=>{
 		let FollowUser = require('../../../models/userEvent/user-follow-user.js').model;
 		let date = new Date();
 
