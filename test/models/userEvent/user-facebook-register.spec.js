@@ -8,7 +8,7 @@ describe("User Facebook Register Event",()=>{
 		let registerEvent = {
 			generatedLocalID:"Alpha",
 			fbUserID:"Centauri",
-			accessToken:"Rigel7",
+			fbAccessToken:"Rigel7",
 			ts:date,
 		};
 
@@ -17,6 +17,7 @@ describe("User Facebook Register Event",()=>{
 			createdRegisterEvent.generatedLocalID.should.equal('Alpha');
 			createdRegisterEvent.fbUserID.should.equal('Centauri');
 			createdRegisterEvent.ts.should.equal(date);
+			createdRegisterEvent.fbAccessToken.should.equal("Rigel7");
 			done();
 		});
 

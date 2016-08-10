@@ -8,7 +8,7 @@ describe("User Facebook Login Event Model",()=>{
 		let loginEvent = {
 			localUserID:"ABC",
 			fbUserID:"123",
-			accessToken:"99RBalloon",
+			fbAccessToken:"99RBalloon",
 			ts:date
 		};
 

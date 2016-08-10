@@ -3,7 +3,7 @@ let mongoose = require(`mongoose`);
 let UserFacebookRegister = mongoose.model(`UserFacebookRegister`, {
 	generatedLocalID:String,
 	fbUserID:String,
-	accessToken:String,
+	fbAccessToken:String,
 	ts:Date
 });
 

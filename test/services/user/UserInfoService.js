@@ -1,32 +1,45 @@
 let utils = require('../../utils.js');
 let should = require(`should`);
 let assert = require('assert');
+let UserService = require('../../../services/user/UserInfoService');
 describe("User Authentication Service",()=>{
 	describe("Get User User Data",()=>{
 		beforeEach((done)=>{
-			// TODO
-			/*
-			let login = require('../../../models/userEvent/user-facebook-login.js').model;
+			let Login = require('../../../models/userEvent/user-facebook-login.js').model;
+			let date = new Date();
 
 			let loginEvent = {
-				localUserID:"ABC",
-				fbUserID:"123",
-				accessToken:"99RBalloon",
-				ts:new Date()
+				localUserID:"Greedo",
+				fbUserID:"Anakin",
+				fbAccessToken:"Skywalker",
+				ts:date
 			};
 
-			model.create(loginEvent, function (err, createdLoginEvent) {
+			Login.create(loginEvent, function (err, createdLoginEvent) {
 				should.not.exist(err);
-				createdLoginEvent.localUserID.should.equal('ABC');
-				createdLoginEvent.fbUserID.should.equal('123');
-				createdLoginEvent.ts.should.equal(date);
 				done();
 			});
-			*/
-			done();
+
 		});
-		it("Should provide the correct user data for a valid FB token");
-		it("Should not return anything for a non-valid ID");
+
+		it("Should provide the correct user id for a valid FB token",(done)=>{
+			let token = "Skywalker";
+			UserService.GetUserID(token).then((id)=>{
+				id.should.equal("Greedo");
+				done();
+			}).
+			catch((e)=>{
+				console.log("ERROR WILL ROBINSON!");
+			});
+		});
+
+		it("Should not return anything for a non-valid ID",(done)=>{
+			UserService.GetUserID("Vader").then((userInfo)=>{
+				should.not.exist(userInfo);
+				done();
+			})
+		});
+		// is this really testable?
 		it("should not return private access tokens");
 	});
 })
