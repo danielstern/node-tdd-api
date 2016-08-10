@@ -39,7 +39,6 @@ describe("User Authentication Service",()=>{
 				done();
 			})
 		});
-		// is this really testable?
-		it("should not return private access tokens");
+
 	});
 })

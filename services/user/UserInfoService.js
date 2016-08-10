@@ -26,9 +26,7 @@ function AggregateUserID(fbAccessToken) {
 
 	let deferred = new Promise((resolve,reject)=>{
 		let Login = require('../../models/userEvent/user-facebook-login.js').model;
-	//	console.log("Finding login model");
 		Login.find({fbAccessToken},(err,logins)=>{
-			console.log("Found",logins);
 			if (logins.length == 0) {
 				resolve(null);
 				return;
@@ -38,10 +36,7 @@ function AggregateUserID(fbAccessToken) {
 		});
 	})
 
-
 	return deferred;
 }
-
-
 
 module.exports=  new UserInfoService();
