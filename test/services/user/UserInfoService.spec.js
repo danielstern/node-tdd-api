@@ -27,9 +27,6 @@ describe("User Authentication Service",()=>{
 			UserService.GetUserID(token).then((id)=>{
 				id.should.equal("Greedo");
 				done();
-			}).
-			catch((e)=>{
-				console.log("ERROR WILL ROBINSON!");
 			});
 		});
 

@@ -8,7 +8,6 @@ describe("User Follower Retreival Service",()=>{
 	describe("Get User Followers",()=>{
 		beforeEach((done)=>{
 			let date = new Date();
-
 			Register.create([{
 				generatedLocalID:"bram",
 				fbUserID:"stark",
@@ -29,7 +28,6 @@ describe("User Follower Retreival Service",()=>{
 
 		});
 
-		// TODO - implement after adding createFollowMethod
 		it("Should return a promise resolving to all the users following a specific user",(done)=>{
 			UserFollowCreationService.CreateFollowRelationship("bram","jon")
 			.then((rel,err)=>{
@@ -39,10 +37,9 @@ describe("User Follower Retreival Service",()=>{
 				return UserFollowRetreivalService.GetFollowers("jon");
 			})
 			.then((followers)=>{
-				console.log("Followers?",followers);
+				//console.log("Followers?",followers);
 				followers.map(r=>r.followeeLocalID).every(f=>f=="jon").should.be.true();
 				followers.map(r=>r.followerLocalID).should.containDeep(["sansa","bram"]);
-				//followers.should.containDeep("sansa","bram");
 				done();
 			})
 			.catch((e)=>{

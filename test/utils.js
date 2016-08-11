@@ -1,6 +1,5 @@
 'use strict';
 
-
 //  Modified from https://github.com/elliotf/mocha-mongoose
 
 
@@ -15,7 +14,6 @@ process.env.NODE_ENV = 'test';
 
 
 beforeEach(function (done) {
-
 
   function clearDB() {
     for (var i in mongoose.connection.collections) {
@@ -35,4 +33,5 @@ beforeEach(function (done) {
   } else {
     return clearDB();
   }
+  
 });

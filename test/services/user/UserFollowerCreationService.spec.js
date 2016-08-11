@@ -25,10 +25,10 @@ describe("User Follower Creation Service",()=>{
 		it("Should create a follower relationship given two valid user IDs",(done)=>{
 			UserFollowCreationService.CreateFollowRelationship("bram","jon")
 			.then((rel)=>{
-				console.log(rel);
+			//	console.log(rel);
 				rel.followerLocalID.should.equal("bram");
 				rel.followeeLocalID.should.equal("jon");
-				console.log("Calling done");
+			//	console.log("Calling done");
 				done();
 			})
 			.catch((e)=>{
