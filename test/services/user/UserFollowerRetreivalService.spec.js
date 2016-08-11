@@ -38,8 +38,8 @@ describe("User Follower Retreival Service",()=>{
 			})
 			.then((followers)=>{
 				//console.log("Followers?",followers);
-				followers.map(r=>r.followeeLocalID).every(f=>f=="jon").should.be.true();
-				followers.map(r=>r.followerLocalID).should.containDeep(["sansa","bram"]);
+			//	followers.every(f=>f=="jon").should.be.true();
+				followers.should.containDeep(["sansa","bram"]);
 				done();
 			})
 			.catch((e)=>{

@@ -6,7 +6,10 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "d3": "^4.2.1",
+    "lodash": "^4.14.2"
+  },
   "devDependencies": {
     "should": "^11.0.0"
   },

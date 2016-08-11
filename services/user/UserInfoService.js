@@ -6,11 +6,11 @@ class UserInfoService {
 	}
 
 	GetUserID(fbAccessToken){
-		console.log("Get user id",fbAccessToken);
+	//	console.log("Get user id",fbAccessToken);
 		let deferred = new Promise((resolve,reject)=>{
 			AggregateUserID(fbAccessToken)
 			.then((userID)=>{
-				console.log("resolve inside promise");
+		//		console.log("resolve inside promise");
 				resolve(userID);
 			})
 			.catch((e)=>{
