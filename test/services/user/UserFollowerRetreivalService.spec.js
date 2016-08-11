@@ -51,27 +51,6 @@ describe("User Follower Retreival Service",()=>{
 	});
 
 	it ("Should accurately aggregate a follow, unfollow then follow again",(done)=>{
-		/*
-		UserFollowCreationService.CreateFollowRelationship("bram","jon")
-		.then((rel,err)=>{
-			setTimeout(()=>{
-				UserUnfollowService.InvalidateFollowRelationship("bram","jon")
-				.then(()=>{
-					setTimeout(()=>{
-						UserFollowCreationService.CreateFollowRelationship("bram","jon")
-						.then(()=>{
-							return UserFollowRetreivalService.GetFollowers("jon");
-						})
-						.then((followers)=>{
-							followers.should.containDeep(["bram"]);
-							done();
-						})
-
-					},5);
-				})
-			},10)
-		});
-		*/
 
 		UserFollowCreationService.CreateFollowRelationship("bram","jon")
 		.then(()=>{
@@ -81,6 +60,10 @@ describe("User Follower Retreival Service",()=>{
 			return UserUnfollowService.InvalidateFollowRelationship("bram","jon");
 		})
 		.then(()=>{
+			return UserFollowRetreivalService.GetFollowers("jon");
+		})
+		.then((followers)=>{
+			followers.should.not.containDeep(["bram"]);
 			return delay(5);
 		})
 		.then(()=>{
@@ -96,13 +79,3 @@ describe("User Follower Retreival Service",()=>{
 	})
 });
 let delay = ms => new Promise(r => setTimeout(r, ms));
-/*
-function delay(ms){
-    var ctr, rej, p = new Promise(function (resolve, reject) {
-        ctr = setTimeout(resolve, ms);
-        rej = reject;
-    });
-    p.cancel = function(){ clearTimeout(ctr); rej(Error("Cancelled"))};
-    return p;
-}
-*/
