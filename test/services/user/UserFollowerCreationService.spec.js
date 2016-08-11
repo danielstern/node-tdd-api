@@ -22,7 +22,6 @@ describe("User Follower Creation Service",()=>{
 
 		});
 
-		// TODO - implement after adding createFollowMethod
 		it("Should create a follower relationship given two valid user IDs",(done)=>{
 			UserFollowCreationService.CreateFollowRelationship("bram","jon")
 			.then((rel)=>{
@@ -35,7 +34,6 @@ describe("User Follower Creation Service",()=>{
 			.catch((e)=>{
 				console.error(e);
 			})
-			//UserFollowService.getFollowers("bram");
 		});
 	});
 })
