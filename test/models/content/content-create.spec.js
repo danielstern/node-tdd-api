@@ -1,6 +1,6 @@
 let utils = require('../../utils.js');
 let should = require(`should`);
-describe("Content creation",()=>{
+describe("Content creation model",()=>{
 	it("Should create a new content creation event",(done)=>{
 		let ContentCreate = require('../../../models/content/content-create.js').model;
 		let date = new Date();

@@ -12,7 +12,6 @@ class UserUnfollowService {
 			};
 
 			UnfollowUser.create(unfollowUserEvent, (err,rel)=>{
-		//		console.log(err);
 				resolve(rel);
 			});
 		});

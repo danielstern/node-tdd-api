@@ -38,8 +38,6 @@ describe("User Follower Retreival Service",()=>{
 			return UserFollowRetreivalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
-			//console.log("Followers?",followers);
-		//	followers.every(f=>f=="jon").should.be.true();
 			followers.should.containDeep(["sansa","bram"]);
 			done();
 		})

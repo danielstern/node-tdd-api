@@ -7,11 +7,15 @@
     "test": "test"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "d3": "^4.2.1",
-    "lodash": "^4.14.2"
+    "express": "^4.14.0",
+    "lodash": "^4.14.2",
+    "request": "^2.74.0"
   },
   "devDependencies": {
-    "should": "^11.0.0"
+    "should": "^11.0.0",
+    "supertest": "^2.0.0"
   },
   "scripts": {
     "test": "mocha --recursive --require chai -R spec"
