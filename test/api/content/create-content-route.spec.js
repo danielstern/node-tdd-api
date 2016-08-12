@@ -55,15 +55,17 @@ describe	("Content creation API route",()=>{
 			content:{text:"win"}
 		})
 		.expect(200)
-		.expect(function(err,res){
+		.end(function(err,res){
 			//console.log('expect...',err.body);
 			ContentCreate.findOne({ownerFBUserID:"bram"},(err,res)=>{
 				should.not.exist(err);
 				res.ownerFBUserID.should.equal("bram");
 				res.content.text.should.equal("win");
+				//should.fail("I can't figure out why this would pass")
+				done();
 			})
 		})
-		.end(done);
+		//.end(done);
 
 	});
 });

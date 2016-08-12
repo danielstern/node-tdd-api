@@ -2,7 +2,7 @@ let utils = require('../../utils.js');
 let should = require(`should`);
 let UserFollowCreationService = require('../../../services/user/UserFollowerCreationService.js');
 let UserUnfollowService = require('../../../services/user/UserUnfollowService.js');
-let UserFollowRetreivalService = require('../../../services/user/UserFollowerRetreivalService');
+let UserFollowRetrievalService = require('../../../services/user/UserFollowerRetrievalService');
 let Register = require('../../../models/userEvent/user-facebook-register.js').model;
 
 describe("User Unfollow Service",()=>{
@@ -29,7 +29,7 @@ describe("User Unfollow Service",()=>{
 			return UserUnfollowService.InvalidateFollowRelationship("bram","jon");
 		})
 		.then(()=>{
-			return UserFollowRetreivalService.GetFollowers("jon");
+			return UserFollowRetrievalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
 			followers.length.should.equal(0);
@@ -49,7 +49,7 @@ describe("User Unfollow Service",()=>{
 			return UserUnfollowService.InvalidateFollowRelationship("sansa","jon");
 		})
 		.then(()=>{
-			return UserFollowRetreivalService.GetFollowers("jon");
+			return UserFollowRetrievalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
 			followers.length.should.equal(1);

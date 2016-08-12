@@ -2,7 +2,7 @@ let FollowUser = require('../../models/userEvent/user-follow-user.js').model;
 let UnfollowUser = require('../../models/userEvent/user-unfollow-user.js').model;
 let d3 = require('d3');
 let _ = require('lodash');
-class UserFollowRetreivalService {
+class UserFollowRetrievalService {
 	GetFollowers(followeeLocalID){
 		return new Promise((resolve,reject)=>{
 			FollowUser.find({followeeLocalID},(err, followEvents)=>{
@@ -48,4 +48,4 @@ class UserFollowRetreivalService {
 	}
 }
 
-module.exports = new UserFollowRetreivalService();
+module.exports = new UserFollowRetrievalService();

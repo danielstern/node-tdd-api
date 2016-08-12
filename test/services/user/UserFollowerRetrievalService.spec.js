@@ -1,11 +1,11 @@
 let utils = require('../../utils.js');
 let should = require(`should`);
 let UserFollowCreationService = require('../../../services/user/UserFollowerCreationService');
-let UserFollowRetreivalService = require('../../../services/user/UserFollowerRetreivalService');
+let UserFollowRetrievalService = require('../../../services/user/UserFollowerRetrievalService');
 let UserUnfollowService = require('../../../services/user/UserUnfollowService.js');
 let Register = require('../../../models/userEvent/user-facebook-register.js').model;
 
-describe("User Follower Retreival Service",()=>{
+describe("User Follower Retrieval Service",()=>{
 
 	beforeEach((done)=>{
 		let date = new Date();
@@ -35,7 +35,7 @@ describe("User Follower Retreival Service",()=>{
 			return UserFollowCreationService.CreateFollowRelationship("sansa","jon");
 		})
 		.then(()=>{
-			return UserFollowRetreivalService.GetFollowers("jon");
+			return UserFollowRetrievalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
 			followers.should.containDeep(["sansa","bram"]);
@@ -58,7 +58,7 @@ describe("User Follower Retreival Service",()=>{
 			return UserUnfollowService.InvalidateFollowRelationship("bram","jon");
 		})
 		.then(()=>{
-			return UserFollowRetreivalService.GetFollowers("jon");
+			return UserFollowRetrievalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
 			followers.should.not.containDeep(["bram"]);
@@ -68,7 +68,7 @@ describe("User Follower Retreival Service",()=>{
 			return UserFollowCreationService.CreateFollowRelationship("bram","jon")
 		})
 		.then(()=>{
-			return UserFollowRetreivalService.GetFollowers("jon");
+			return UserFollowRetrievalService.GetFollowers("jon");
 		})
 		.then((followers)=>{
 			followers.should.containDeep(["bram"]);
