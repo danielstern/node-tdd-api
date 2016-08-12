@@ -27,7 +27,7 @@ describe("The content Retrieval service",()=>{
 				},
 				ts:date
 			},{
-				ownerFBUserID:"cersei",
+				ownerFBUserID:"lannister",
 				content: {
 					text:"Casterly Rock!"
 				},
@@ -43,12 +43,20 @@ describe("The content Retrieval service",()=>{
 		ContentRetrieval.RetrieveContent("stark")
 		.then((content)=>{
 			content.length.should.equal(1);
+			done();
+		})
+		.catch((e)=>{
+			console.error(e);
 		})
 	});
 	it("should retrieve content for multiple users",(done)=>{
 		ContentRetrieval.RetrieveContent("stark","lannister")
 		.then((content)=>{
 			content.length.should.equal(2);
+			done();
+		})
+		.catch((e)=>{
+			console.error(e);
 		})
 	})
 })
