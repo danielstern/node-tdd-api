@@ -2,6 +2,8 @@ let Register = require('../../models/userEvent/user-facebook-register.js').model
 let Login = require('../../models/userEvent/user-facebook-login.js').model;
 let FacebookVerificationService = require('../facebook-verification-service');
 
+
+
 // TO DO - implement service for login and register
 class UserAuthenticationConfirmationService {
 
@@ -14,6 +16,9 @@ class UserAuthenticationConfirmationService {
 				} else {
 					resolve(false);
 				}
+			})
+			.catch((e)=>{
+				console.error(e);
 			});
 		})
 
