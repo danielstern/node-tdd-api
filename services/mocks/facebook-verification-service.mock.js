@@ -6,7 +6,7 @@ class MockFacebookVerificationService{
 		mockToken = fbAccessToken;
 	}
 	VerifyTokenAuthenticityWithFacebookAPI(fbUserID, fbAccessToken) {
-		console.log("Mock verify authenticity");
+		//console.log("Mock verify authenticity");
 		return new Promise((resolve)=>{
 			if (fbUserID === mockId && fbAccessToken == mockToken) {
 				resolve({id:mockId});

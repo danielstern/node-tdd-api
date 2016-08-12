@@ -1,9 +1,9 @@
 let auth = require('../../services/user/UserAuthenticationConfirmationService')
 module.exports = (app)=>{
-	console.log("Applying route: content create route")
+	//console.log("Applying route: content create route")
 	app
 		.post('/content/create',(req,res)=>{
-			console.log("Posted to create",req.body);
+			//console.log("Posted to create",req.body);
 			auth.ConfirmValidation(req.body.ownerFBUserID,req.body.fbAccessToken)
 			.then((isValid)=>{
 				if (isValid) {

@@ -14,7 +14,7 @@ let Register = require('../../../models/userEvent/user-facebook-register.js').mo
 
 // todo- implement later
 
-describe.only	("Content creation API route",()=>{
+describe	("Content creation API route",()=>{
 
 	beforeEach((done)=>{
 		let date = new Date();
