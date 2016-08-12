@@ -56,7 +56,7 @@ describe	("Content creation API route",()=>{
 		})
 		.expect(200)
 		.end(function(err,res){
-			//console.log('expect...',err.body);
+
 			ContentCreate.findOne({ownerFBUserID:"bram"},(err,res)=>{
 				should.not.exist(err);
 				res.ownerFBUserID.should.equal("bram");
