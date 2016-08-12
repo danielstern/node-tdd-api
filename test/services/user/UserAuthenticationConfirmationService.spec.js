@@ -7,8 +7,7 @@ let should = require(`should`);
 let UserAuthenticationConfirmationService = require('../../../services/user/UserAuthenticationConfirmationService.js');
 let Register = require('../../../models/userEvent/user-facebook-register.js').model;
 
-
-describe.only("User Authentication Confirmation Service",()=>{
+describe("User Authentication Confirmation Service",()=>{
 
 		beforeEach((done)=>{
 			let date = new Date();
@@ -18,7 +17,6 @@ describe.only("User Authentication Confirmation Service",()=>{
 			Register.create({
 				generatedLocalID:"bram",
 				fbUserID:"stark",
-				//fbAccessToken:"EAAD9MVQUt54BAAyE49FtBH1V5swiDJFZBNnZAUBcntuPwYCxwAHNUEOOyu9piQvdZB32j3fZCUgaNmQXtldeqsapVn8BmuZABqIGZA7QPskaRRybHtb01YZBzZBun3io9ZBA8JPZBxUjT7u20ZAvh4qcqagz9nkJxnIC12OTkFHjqK0RwZDZD",
 				fbAccessToken:"summer",
 				ts:date
 			}, done);

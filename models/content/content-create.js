@@ -1,7 +1,7 @@
 let mongoose = require(`mongoose`);
 
 let ContentCreate = mongoose.model(`ContentCreate`, {
-	ownerLocalUserID:String,
+	ownerFBUserID:String,
 	content: {
 		text:String
 	},

@@ -6,7 +6,7 @@ describe("Content creation model",()=>{
 		let date = new Date();
 
 		let contentEvent = {
-			ownerLocalUserID:"TryionLannister",
+			ownerFBUserID:"TryionLannister",
 			content: {
 				text:"More wine, please."
 			},
@@ -15,7 +15,7 @@ describe("Content creation model",()=>{
 
 		ContentCreate.create(contentEvent, function (err, contentCreationEvent) {
 			should.not.exist(err);
-			contentCreationEvent.ownerLocalUserID.should.equal('TryionLannister');
+			contentCreationEvent.ownerFBUserID.should.equal('TryionLannister');
 			contentCreationEvent.content.text.should.equal('More wine, please.');
 			contentCreationEvent.ts.should.equal(date);
 			done();
